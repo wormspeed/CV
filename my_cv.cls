@@ -1,16 +1,19 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{my_cv}
-\LoadClass{article}
+\LoadClass[9pt]{extarticle}
 
 \RequirePackage{titlesec}
 \RequirePackage{hyperref}
-\usepackage[margin=1in]{geometry}
+\usepackage{extsizes}
+\usepackage[a4paper, total={6.5in, 9.5in}]{geometry}
 \usepackage{multicol}
 \usepackage[dvipsnames]{xcolor}
-\usepackage[T1]{fontenc}
 \usepackage{enumitem}
-\renewcommand*\familydefault{\sfdefault}
+\usepackage{fontspec}
+\setmonofont{Fira Code}[AutoFakeSlant = 0.25]
+\renewcommand*\familydefault{\ttdefault}
 
+\raggedright
 
 \hypersetup{
 	colorlinks=true,
@@ -20,14 +23,13 @@
 }
 
 \titleformat{\section}         % Customise the \section command 
-{\Large\scshape\raggedright} % Make the \section headers large (\Large),
-% small capitals (\scshape) and left aligned (\raggedright)
-{}{0em}                      % Can be used to give a prefix to all sections, like 'Section ...'
-{}                           % Can be used to insert code before the heading
-[\titlerule]                 % Inserts a horizontal line after the heading
+{\raggedright\bfseries\itshape}
+{}{0em}
+{\color{ForestGreen}// }
+[\color{Black}]
 
 \titleformat{\subsection}
-{\scshape\raggedright\bfseries}
+{\raggedright\itshape}
 {}{0em}
 {}
 
@@ -38,3 +40,6 @@
 \newcommand{\doubledatedsubsection}[3]{%
 	\subsection{#1 \hfill #3 \\ #2\hfill}%
 }
+
+\renewcommand{\labelitemi}{*}
+\renewcommand{\labelitemii}{->}
