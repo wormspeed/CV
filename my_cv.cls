@@ -7,6 +7,11 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{multicol}
 \usepackage[dvipsnames]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{enumitem}
+\renewcommand*\familydefault{\sfdefault}
+
+
 \hypersetup{
 	colorlinks=true,
 	linkcolor=MidnightBlue,
